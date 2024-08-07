@@ -23,7 +23,7 @@ const TasksDone = () => {
 
   const todaysTasksToShow = todaysTasks.slice(0, 3);
 
-  const showMore = todaysTasks.length > todaysTasksToShow.length;
+  
 
   return (
     <>
