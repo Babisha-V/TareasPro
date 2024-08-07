@@ -21,7 +21,7 @@ const TasksDone = () => {
 
   const percentageAllTasks = (allTasksDone.length * 100) / state.tasks.length;
 
-  const todaysTasksToShow = todaysTasks.slice(0, 3);
+  
 
   
 
