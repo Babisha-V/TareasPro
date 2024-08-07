@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import BtnAddTask from "../Utilities/BtnAddTask";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import avatar1 from "../../assets/avatar-1.jpg";
 import SearchField from "./SearchField";
 import { MenusContext } from "../../Context/Menus/MenusContext";
-import Notification from "./Notification";
 import { useUserAuth } from "../../Context/Authentication/AuthContext";
 
 const HeaderTasks = () => {

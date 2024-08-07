@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
-import avatar1 from "../../assets/avatar-1.jpg";
 import LayoutMenus from "../Utilities/LayoutMenus";
-import DarkMode from "./DarkMode";
-import DeleteTasks from "./DeleteTasks";
 import TasksDone from "./TasksDone";
 import { MenusContext } from "../../Context/Menus/MenusContext";
 import { useUserAuth } from "../../Context/Authentication/AuthContext";
