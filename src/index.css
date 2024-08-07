@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .inputStyles {
-  @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-[#00B3B2] focus:border-[#009F9F] focus:outline-none transition dark:bg-slate-800;
+  @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-[#335c91] focus:border-[#335c91] focus:outline-none transition dark:bg-slate-800;
 }
 
 .btn {
-  @apply bg-[#00b3b2] hover:bg-[#009F9F] py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-[#00b3b2] dark:hover:bg-[#009F9F];
+  @apply bg-[#335c91] hover:bg-[#335c91] py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-[#335c91] dark:hover:bg-[#335c91];
 }
 
 .btn:active {
@@ -16,13 +16,13 @@
 
 @layer components {
   .tasksList > li:first-of-type article {
-    @apply bg-[#00B3B2] text-slate-100 dark:bg-[#00B3B2];
+    @apply bg-[#335c91] text-slate-100 dark:bg-[#335c91];
   }
   .tasksList > li:first-of-type article .description {
     @apply text-slate-200;
   }
   .tasksList > li:first-of-type article > div {
-    @apply border-[#008B8B] dark:border-[#008B8B];
+    @apply border-[#335c91] dark:border-[#335c91];
   }
   .listView1 article {
     @apply h-40;
@@ -54,7 +54,7 @@
     @apply bg-slate-200 w-full h-2 rounded-full overflow-hidden dark:bg-slate-700/[.3];
   }
   .barProgress > div {
-    @apply bg-[#00B3B2] h-full;
+    @apply bg-[#335c91] h-full;
   }
   .itemDirectory > .buttonsDir {
     @apply xl:opacity-0 transition opacity-100;

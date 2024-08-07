@@ -19,6 +19,7 @@ export function UserAuthContextProvider({ children }) {
       setUser(user);
       localStorage.setItem("userUID", user.$id);
     } catch (error) {
+      localStorage.setItem("userUID", ID.unique());
       console.log(error);
       setError("Please Enter Valid Details");
     }
@@ -31,6 +32,7 @@ export function UserAuthContextProvider({ children }) {
       setUser(user);
       localStorage.setItem("userUID", user.$id);
     } catch (error) {
+      localStorage.setItem("userUID", ID.unique());
       console.log(error);
       setError("Please Enter Valid Details");
     }

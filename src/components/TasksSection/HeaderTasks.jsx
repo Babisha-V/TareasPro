@@ -62,8 +62,8 @@ const HeaderTasks = () => {
         <time dateTime={dateTimeFormat}>{todayDate}</time>
       </div>
       <div className="flex flex-1">
-        <Notification />
-        <BtnAddTask className="fixed z-10 shadow-lg sm:static bottom-3 right-3 sm:z-0 min-w-max shadow-slate-400 dark:shadow-slate-900 sm:shadow-transparent" />
+        {/* <Notification /> */}
+        {/* <BtnAddTask className="fixed z-10 shadow-lg sm:static bottom-3 right-3 sm:z-0 min-w-max shadow-slate-400 dark:shadow-slate-900 sm:shadow-transparent" /> */}
 
         <button onClick={openMenuAccountHandler} className="block xl:hidden">
           <img

@@ -39,7 +39,7 @@ const SignIn = () => {
         <div className="w-full max-w-xl mx-auto lg:w-96">
           <div>
             <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">
-              Sign in.
+              Welcome to Easy Track
             </h2>
           </div>
 
@@ -96,25 +96,12 @@ const SignIn = () => {
                     disabled={loading}
                     className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
-                    Sign in
+                    Login
                   </button>
                 </div>
               </form>
 
-              <div className="flex items-center justify-center gap-4 mt-4">
-                <label
-                  htmlFor="remember-me"
-                  className="block ml-2 text-neutral-600"
-                >
-                  New to Here?
-                </label>
-                <Link
-                  to="/signUp"
-                  className="font-medium text-blue-600 hover:text-blue-500"
-                >
-                  Sign up now
-                </Link>
-              </div>
+             
               {/* <div className="relative my-4">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-gray-300"></div>

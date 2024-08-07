@@ -29,69 +29,43 @@ const ModalCreateTask = ({ onClose, task, nameForm, onConfirm }) => {
   let month = today.getMonth() + 1;
   const year = today.getFullYear();
   if (day < 10) {
-    day = +("0" + day);
+    day = "0" + day;
   }
   if (month < 10) {
-    month = +("0" + month);
+    month = "0" + month;
   }
 
-  const todayDate = year + "-" + month + "-" + day;
-  const maxDate = year + 1 + "-" + month + "-" + day;
+  const todayDate = `${year}-${month}-${day}`;
+  const maxDate = `${year + 1}-${month}-${day}`;
 
-  const [description, setDescription] = useState(() => {
-    if (task) {
-      return task.description;
-    }
-    return "";
-  });
-  const [title, setTitle] = useState(() => {
-    if (task) {
-      return task.title;
-    }
-    return "";
-  });
-  const [date, setDate] = useState(() => {
-    if (task) {
-      return task.date;
-    }
-    return todayDate;
-  });
+  const [description, setDescription] = useState(task ? task.description : "");
+  const [title, setTitle] = useState(task ? task.title : "");
+  const [date, setDate] = useState(task ? task.date : todayDate);
+  const [end_date, setEndDate] = useState(task ? task.end_date : todayDate);
+
   const isTitleValid = useRef(false);
   const isDateValid = useRef(false);
+  const isEndDateValid = useRef(false);
 
-  const [isImportant, setIsImportant] = useState(() => {
-    if (task) {
-      return task.important;
-    }
-    return false;
-  });
+  const [isImportant, setIsImportant] = useState(task ? task.important : false);
+  const [isCompleted, setIsCompleted] = useState(task ? task.completed : false);
 
-  const [isCompleted, setIsCompleted] = useState(() => {
-    if (task) {
-      return task.completed;
-    }
-    return false;
-  });
-
-  const [selectedDirectory, setSelectedDirectory] = useState(() => {
-    if (task) {
-      return task.dir;
-    }
-    return state.directories[0];
-  });
+  const [selectedDirectory, setSelectedDirectory] = useState(task ? task.dir : state.directories[0]);
 
   const addNewTaskHandler = (event) => {
     event.preventDefault();
 
     isTitleValid.current = title.trim().length > 0;
     isDateValid.current = date.trim().length > 0;
+    isEndDateValid.current = end_date.trim().length > 0;
 
-    if (isTitleValid.current && isDateValid.current) {
+    if (isTitleValid.current && isDateValid.current && isEndDateValid.current) {
       const newTask = {
         title: title,
         dir: selectedDirectory,
         description: description,
         date: date,
+        end_date: end_date,
         completed: isCompleted,
         important: isImportant,
         id: task?.id ? task.id : Date.now().toString(),
@@ -100,17 +74,15 @@ const ModalCreateTask = ({ onClose, task, nameForm, onConfirm }) => {
       onClose();
     }
   };
+
   return (
     <Modal onClose={onClose} title={nameForm}>
-      <form
-        className="flex flex-col stylesInputsField"
-        onSubmit={addNewTaskHandler}
-      >
+      <form className="flex flex-col stylesInputsField" onSubmit={addNewTaskHandler}>
         <label>
           Title
           <input
             type="text"
-            placeholder="e.g, study for the test"
+            placeholder="e.g., Task name"
             required
             value={title}
             onChange={({ target }) => setTitle(target.value)}
@@ -118,7 +90,7 @@ const ModalCreateTask = ({ onClose, task, nameForm, onConfirm }) => {
           />
         </label>
         <label>
-          Date
+          Start Date
           <input
             type="date"
             className="w-full"
@@ -130,9 +102,21 @@ const ModalCreateTask = ({ onClose, task, nameForm, onConfirm }) => {
           />
         </label>
         <label>
+          End Date
+          <input
+            type="date"
+            className="w-full"
+            value={end_date}
+            required
+            onChange={({ target }) => setEndDate(target.value)}
+            min={date}
+            max={maxDate}
+          />
+        </label>
+        <label>
           Description (optional)
           <textarea
-            placeholder="e.g, study for the test"
+            placeholder="e.g., Summarize the key points"
             className="w-full"
             value={description}
             onChange={({ target }) => setDescription(target.value)}

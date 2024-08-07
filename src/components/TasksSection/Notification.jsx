@@ -34,7 +34,7 @@ const Notification = () => {
         className={`relative ${tasksToShow.length ? classHasNotification : ""}`}
         title="see notifications"
       >
-        <IconBell className="fill-[#00B3B2] w-5 h-5 md:w-6 md:h-6 dark:fill-[#00B3B2]" />
+        <IconBell className="fill-[#335c91] w-5 h-5 md:w-6 md:h-6 dark:fill-[#335c91]" />
       </button>
       {notificationIsVisible && (
         <div className="absolute bg-slate-100 dark:bg-slate-800 top-full rounded-md right-0 p-3 w-52 border border-slate-300 dark:border-slate-700">

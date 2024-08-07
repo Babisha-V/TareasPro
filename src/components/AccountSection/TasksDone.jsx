@@ -31,7 +31,7 @@ const TasksDone = () => {
       {todaysTasks.length !== 0 && (
         <div className="mt-8">
           <span className="flex justify-between mb-2">
-            <span>Tasks today</span> {todayTasksDone.length}/
+            <span>Today's Task</span> {todayTasksDone.length}/
             {todaysTasks.length}
           </span>
           <div className="barProgress">
@@ -56,7 +56,7 @@ const TasksDone = () => {
         </span>
       )}
 
-      {todaysTasks.length > 0 && (
+      {/* {todaysTasks.length > 0 && (
         <div className="mt-8">
           <span className="block mb-2">Today's tasks</span>
           <ul>
@@ -72,7 +72,7 @@ const TasksDone = () => {
             </Link>
           )}
         </div>
-      )}
+      )} */}
     </>
   );
 };
